@@ -14,7 +14,7 @@ jobs:
       - name: Set Up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: "16"
+          node-version: "18"
 
       - name: Install dependencies
         run: npm install
@@ -31,7 +31,7 @@ jobs:
         with:
           server_address: smtp.gmail.com
           server_port: 587
-          username: ${{secrets.EMAIL_USERNAME}}
+          username: ${{ secrets.EMAIL_USERNAME }}
           password: ${{secrets.EMAIL_PASSWORD}}
           subject: GitHub Actions - Build Failure
           body: |
